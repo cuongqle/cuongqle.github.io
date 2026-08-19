@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le Quoc Cuong — Technical Lead</title>
+  <meta name="description" content="Le Quoc Cuong. Technical Lead and Senior Full-Stack Engineer in Ho Chi Minh City. .NET, Python, Node.js, Vue, React, Azure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1915;
+      --mute: #5c564c;
+      --rule: #d9d0c3;
+      --paper: #f3eee6;
+      --copper: #9a4a22;
+      --link: #1c1915;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(to right, rgba(28,25,21,.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(28,25,21,.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      font-family: "Newsreader", "Iowan Old Style", Georgia, serif;
+      font-size: 1.125rem;
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 58rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem 2rem;
+      align-items: end;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1.25rem;
+    }
+    .kicker {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin: 0 0 .4rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 600;
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+    .role {
+      margin: .55rem 0 0;
+      color: var(--mute);
+      font-size: 1.05rem;
+    }
+    .links {
+      display: flex;
+      gap: 1.25rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .85rem;
+    }
+    a {
+      color: var(--link);
+      text-underline-offset: .22em;
+    }
+    a:hover { color: var(--copper); }
+    .lede {
+      max-width: 42rem;
+      margin: 2rem 0 0;
+      font-size: 1.28rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 3rem;
+      margin-top: 2.75rem;
+    }
+    h2 {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin: 0 0 .85rem;
+      font-weight: 500;
+    }
+    .stack {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .stack li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .7rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: .98rem;
+    }
+    .stack span {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .78rem;
+      color: var(--mute);
+      white-space: nowrap;
+    }
+    .now p, .selected p { margin: 0 0 .85rem; color: var(--mute); }
+    .now p:last-child, .selected p:last-child { margin-bottom: 0; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--ink);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .75rem;
+      color: var(--mute);
+    }
+    @media (max-width: 720px) {
+      header, .grid { grid-template-columns: 1fr; }
+      .links { padding-top: .25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="kicker">Ho Chi Minh City · Vietnam</p>
+        <h1>Le Quoc Cuong</h1>
+        <p class="role">Technical Lead / Senior Full-Stack Engineer</p>
+      </div>
+      <nav class="links" aria-label="Profiles">
+        <a href="https://github.com/cuongqle">GitHub</a>
+        <a href="https://www.linkedin.com/in/cuong-le-8865b689">LinkedIn</a>
+      </nav>
+    </header>
+
+    <p class="lede">
+      I design and ship production systems for global products: modular backends on .NET, Node.js / Express, Python, and Azure;
+      event-driven integration; and Vue, React, and Angular interfaces — often with Tailwind and shadcn/ui —
+      that hold up under real enterprise load.
+    </p>
+
+    <div class="grid">
+      <section>
+        <h2>Selected work</h2>
+        <ul class="stack">
+          <li>B2B supplier platform · ~30k partners<span>Apiumhub</span></li>
+          <li>SAP S/4HANA · ServiceNow · PLM via CPI / MuleSoft<span>Integration</span></li>
+          <li>HPE Unified Functional Testing<span>HPE</span></li>
+          <li>SaaS ERP · DDD, CQRS, event sourcing<span>Evolution</span></li>
+          <li>Agentic workflows · MCP, RAG, FastAPI / Python<span>Current</span></li>
+        </ul>
+      </section>
+
+      <section class="now">
+        <h2>How I work</h2>
+        <p>
+          Fifteen-plus years across architecture, delivery, and mentoring. Comfortable from discovery
+          through CI/CD and containerized deploy. Strongest where business process meets distributed design —
+          enterprise .NET and Node/Express platforms, Python services for APIs and AI, and product UIs in Vue and React.
+        </p>
+        <p>
+          Current public work: agentic workflows (MCP / RAG with Python and .NET) and a TypeScript tenant platform
+          using Tailwind and shadcn/ui.
+        </p>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Stack I reach for</h2>
+        <ul class="stack">
+          <li>.NET / C# · Azure<span>Systems</span></li>
+          <li>Node.js / Express · Python / FastAPI<span>APIs</span></li>
+          <li>Python · RAG / MCP<span>AI</span></li>
+          <li>Vue · React · Angular · TypeScript<span>Interface</span></li>
+          <li>Tailwind · shadcn/ui<span>UI</span></li>
+          <li>Microservices · modular monolith · events<span>Shape</span></li>
+          <li>Docker · Kubernetes · CI/CD<span>Ship</span></li>
+        </ul>
+      </section>
+
+      <section class="selected">
+        <h2>Contact</h2>
+        <p>
+          For roles, architecture reviews, or collaboration: LinkedIn is the reliable channel.
+          Source and side projects live on GitHub.
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/cuong-le-8865b689">linkedin.com/in/cuong-le-8865b689</a><br />
+          <a href="https://github.com/cuongqle">github.com/cuongqle</a>
+        </p>
+      </section>
+    </div>
+
+    <footer>cuongqle.github.io</footer>
+  </div>
+</body>
+</html>
