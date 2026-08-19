@@ -15,7 +15,6 @@
       --rule: #d9d0c3;
       --paper: #f3eee6;
       --copper: #9a4a22;
-      --link: #1c1915;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; }
@@ -44,14 +43,16 @@
       border-bottom: 1px solid var(--ink);
       padding-bottom: 1.25rem;
     }
-    .kicker {
+    .kicker,
+    h2 {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .72rem;
       letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--copper);
-      margin: 0 0 .4rem;
+      font-weight: 500;
     }
+    .kicker { margin: 0 0 .4rem; }
     h1 {
       margin: 0;
       font-size: clamp(2.4rem, 6vw, 3.6rem);
@@ -71,63 +72,90 @@
       font-size: .85rem;
     }
     a {
-      color: var(--link);
+      color: var(--ink);
       text-underline-offset: .22em;
     }
     a:hover { color: var(--copper); }
     .lede {
-      max-width: 42rem;
+      max-width: 40rem;
       margin: 2rem 0 0;
       font-size: 1.28rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem 3rem;
+    section {
       margin-top: 2.75rem;
     }
     h2 {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .72rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--copper);
-      margin: 0 0 .85rem;
-      font-weight: 500;
+      margin: 0 0 .9rem;
+      padding-bottom: .45rem;
+      border-bottom: 1px solid var(--ink);
     }
-    .stack {
+    .work {
       list-style: none;
       margin: 0;
       padding: 0;
-      border-top: 1px solid var(--rule);
     }
-    .stack li {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: .7rem 0;
+    .work li {
+      display: grid;
+      grid-template-columns: 8.5rem 1fr;
+      gap: .75rem 1.5rem;
+      padding: .75rem 0;
       border-bottom: 1px solid var(--rule);
-      font-size: .98rem;
     }
-    .stack span {
+    .work .org {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .78rem;
       color: var(--mute);
-      white-space: nowrap;
+      padding-top: .2rem;
     }
-    .now p, .selected p { margin: 0 0 .85rem; color: var(--mute); }
-    .now p:last-child, .selected p:last-child { margin-bottom: 0; }
+    .work p { margin: 0; }
+    .work .detail {
+      color: var(--mute);
+      font-size: 1rem;
+    }
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem 2rem;
+    }
+    .stack h3 {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin: 0 0 .6rem;
+      font-weight: 500;
+    }
+    .stack ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .stack li {
+      padding: .28rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .now {
+      color: var(--mute);
+      max-width: 42rem;
+      margin: 0;
+    }
     footer {
       margin-top: 3rem;
       padding-top: 1rem;
       border-top: 1px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .75rem;
       color: var(--mute);
     }
     @media (max-width: 720px) {
-      header, .grid { grid-template-columns: 1fr; }
+      header, .work li, .stack { grid-template-columns: 1fr; }
       .links { padding-top: .25rem; }
+      .work .org { padding-top: 0; }
     }
   </style>
 </head>
@@ -146,65 +174,91 @@
     </header>
 
     <p class="lede">
-      I design and ship production systems for global products: modular backends on .NET, Node.js / Express, Python, and Azure;
-      event-driven integration; and Vue, React, and Angular interfaces — often with Tailwind and shadcn/ui —
-      that hold up under real enterprise load.
+      I lead architecture and delivery for production systems: distributed backends,
+      enterprise integration, and product interfaces that hold up under real load.
     </p>
 
-    <div class="grid">
-      <section>
-        <h2>Selected work</h2>
-        <ul class="stack">
-          <li>B2B supplier platform · ~30k partners<span>Apiumhub</span></li>
-          <li>SAP S/4HANA · ServiceNow · PLM via CPI / MuleSoft<span>Integration</span></li>
-          <li>HPE Unified Functional Testing<span>HPE</span></li>
-          <li>SaaS ERP · DDD, CQRS, event sourcing<span>Evolution</span></li>
-          <li>Agentic workflows · MCP, RAG, FastAPI / Python<span>Current</span></li>
-        </ul>
-      </section>
+    <section>
+      <h2>Work</h2>
+      <ul class="work">
+        <li>
+          <span class="org">Apiumhub</span>
+          <div>
+            <p>B2B supplier platform for ~30,000 partners</p>
+            <p class="detail">Domain-driven design, event-driven microservices on Azure</p>
+            <p class="detail">SAP S/4HANA, ServiceNow, and PLM via CPI / MuleSoft</p>
+          </div>
+        </li>
+        <li>
+          <span class="org">HPE</span>
+          <div>
+            <p>Unified Functional Testing</p>
+            <p class="detail">Enterprise product engineering, system-level integrations, mentoring</p>
+          </div>
+        </li>
+        <li>
+          <span class="org">Evolution</span>
+          <div>
+            <p>SaaS ERP (finance, warehousing, sales)</p>
+            <p class="detail">SPA architecture; DDD, CQRS, event sourcing</p>
+          </div>
+        </li>
+        <li>
+          <span class="org">Personal</span>
+          <div>
+            <p>Agentic workflows and a TypeScript tenant platform</p>
+            <p class="detail">MCP / RAG; Python and .NET; Tailwind and shadcn/ui</p>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-      <section class="now">
-        <h2>How I work</h2>
-        <p>
-          Fifteen-plus years across architecture, delivery, and mentoring. Comfortable from discovery
-          through CI/CD and containerized deploy. Strongest where business process meets distributed design —
-          enterprise .NET and Node/Express platforms, Python services for APIs and AI, and product UIs in Vue and React.
-        </p>
-        <p>
-          Current public work: agentic workflows (MCP / RAG with Python and .NET) and a TypeScript tenant platform
-          using Tailwind and shadcn/ui.
-        </p>
-      </section>
-    </div>
+    <section>
+      <h2>Stack</h2>
+      <div class="stack">
+        <div>
+          <h3>Backend</h3>
+          <ul>
+            <li>.NET / C# · Azure</li>
+            <li>Node.js / Express</li>
+            <li>Python / FastAPI</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <ul>
+            <li>Vue · React · Angular</li>
+            <li>TypeScript</li>
+            <li>Tailwind · shadcn/ui</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Platform</h3>
+          <ul>
+            <li>Events · microservices</li>
+            <li>Docker · Kubernetes · CI/CD</li>
+            <li>RAG · MCP</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div class="grid">
-      <section>
-        <h2>Stack I reach for</h2>
-        <ul class="stack">
-          <li>.NET / C# · Azure<span>Systems</span></li>
-          <li>Node.js / Express · Python / FastAPI<span>APIs</span></li>
-          <li>Python · RAG / MCP<span>AI</span></li>
-          <li>Vue · React · Angular · TypeScript<span>Interface</span></li>
-          <li>Tailwind · shadcn/ui<span>UI</span></li>
-          <li>Microservices · modular monolith · events<span>Shape</span></li>
-          <li>Docker · Kubernetes · CI/CD<span>Ship</span></li>
-        </ul>
-      </section>
+    <section>
+      <h2>Focus</h2>
+      <p class="now">
+        Fifteen-plus years across architecture, delivery, and mentoring — from discovery
+        through containerized deploy. Strongest where business process meets distributed design.
+      </p>
+    </section>
 
-      <section class="selected">
-        <h2>Contact</h2>
-        <p>
-          For roles, architecture reviews, or collaboration: LinkedIn is the reliable channel.
-          Source and side projects live on GitHub.
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/in/cuong-le-8865b689">linkedin.com/in/cuong-le-8865b689</a><br />
-          <a href="https://github.com/cuongqle">github.com/cuongqle</a>
-        </p>
-      </section>
-    </div>
-
-    <footer>cuongqle.github.io</footer>
+    <footer>
+      <span>cuongqle.github.io</span>
+      <span>
+        <a href="https://www.linkedin.com/in/cuong-le-8865b689">LinkedIn</a>
+        ·
+        <a href="https://github.com/cuongqle">GitHub</a>
+      </span>
+    </footer>
   </div>
 </body>
 </html>
