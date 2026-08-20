@@ -105,6 +105,10 @@
       grid-template-columns: 8.5rem 1fr;
       gap: .75rem 1.5rem;
       padding: .75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .work li:last-child {
+      border-bottom: none;
     }
     .work .org {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -141,39 +145,60 @@
       border-bottom: 1px solid var(--rule);
     }
     .personal p {
-      margin: 0 0 1rem;
+      margin: 0 0 .5rem;
       color: var(--mute);
     }
-    .demo {
+    .personal .project + .project {
+      margin-top: 2rem;
+    }
+    .personal .project-head {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       gap: 1rem;
-      padding: 1rem 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      text-decoration: none;
+      margin-bottom: .35rem;
+    }
+    .personal .project-title {
+      margin: 0;
       color: var(--ink);
-    }
-    .demo:hover { color: var(--copper); }
-    .demo strong {
-      font-weight: 600;
       font-size: 1.15rem;
+      font-weight: 600;
     }
-    .demo span {
+    .personal .project-link {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .72rem;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--copper);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .personal .project-link:hover {
+      color: var(--ink);
+    }
+    .personal .tech {
+      margin: 0;
+      color: var(--mute);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .85rem;
     }
     footer {
       margin-top: 3rem;
       padding-top: 1rem;
       border-top: 1px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .75rem;
       color: var(--mute);
+    }
+    footer a {
+      color: var(--mute);
+    }
+    footer a:hover {
+      color: var(--copper);
     }
     @media (max-width: 720px) {
       header, .work li, .stack { grid-template-columns: 1fr; }
@@ -193,6 +218,7 @@
       <nav class="nav-links" aria-label="Profiles">
         <a href="https://github.com/cuongqle">GitHub</a>
         <a href="https://www.linkedin.com/in/cuong-le-8865b689">LinkedIn</a>
+        <a href="mailto:lequoccuong@gmail.com">Email</a>
       </nav>
     </header>
 
@@ -217,8 +243,17 @@
           <span class="org">Apiumhub</span>
           <div>
             <p>B2B supplier platform for ~30,000 partners</p>
-            <p class="detail">Domain-driven design, event-driven microservices on Azure</p>
-            <p class="detail">SAP S/4HANA, ServiceNow, and PLM via CPI / MuleSoft</p>
+            <p class="detail">Domain-driven modular monolith evolving toward microservices, leveraging event-driven architecture and Azure infrastructure</p>
+            <p class="detail">.NET Core backends, Azure AD (Entra ID), CI/CD with Docker and Kubernetes</p>
+            <p class="detail">Integrated SAP core systems (e.g., SAP S/4HANA) with external enterprise platforms (e.g., ServiceNow, PLM systems) via SAP CPI, MuleSoft</p>
+          </div>
+        </li>
+        <li>
+          <span class="org">HPE</span>
+          <div>
+            <p>Expert Engineer / Technical Lead</p>
+            <p class="detail">Hewlett-Packard Enterprise — Unified Functional Testing (UFT)</p>
+            <p class="detail">Enterprise product engineering, system-level integrations, and mentoring</p>
           </div>
         </li>
       </ul>
@@ -248,6 +283,7 @@
           <ul>
             <li>Events · microservices</li>
             <li>Docker · Kubernetes · CI/CD</li>
+            <li>Vercel · Render · Neon</li>
             <li>RAG · MCP</li>
           </ul>
         </div>
@@ -256,19 +292,38 @@
 
     <section class="personal">
       <h2>Personal</h2>
-      <p>Side projects exploring multi-tenant platforms and agentic workflows.</p>
-      <a
-        class="demo"
-        href="https://tenant-management-omega.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <strong>Tenant Management</strong>
-        <span>Live demo →</span>
-      </a>
+
+      <div class="project">
+        <div class="project-head">
+          <p class="project-title">Tenant Management</p>
+          <a
+            class="project-link"
+            href="https://tenant-management-omega.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Live demo →</a>
+        </div>
+        <p class="tech">FastAPI · PyJWT · PostgreSQL · Psycopg · Pydantic · SQLAlchemy · Alembic</p>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <p class="project-title">Agentic Code Workflow (MCP + RAG)</p>
+          <a
+            class="project-link"
+            href="https://github.com/cuongqle/agentic-workflow-mcp-rag"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub →</a>
+        </div>
+        <p class="tech">.NET · C# · Semantic Kernel · OpenAI · MCP · RAG</p>
+      </div>
     </section>
 
-    <footer>cuongqle.github.io</footer>
+    <footer>
+      <span>cuongqle.github.io</span>
+      <a href="mailto:lequoccuong@gmail.com">lequoccuong@gmail.com</a>
+    </footer>
   </div>
 </body>
 </html>
