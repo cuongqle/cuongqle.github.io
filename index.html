@@ -123,16 +123,16 @@
     }
     .stack {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.75rem 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem 1.25rem;
     }
     .stack h3 {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: .72rem;
+      font-size: .68rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--mute);
-      margin: 0 0 .6rem;
+      margin: 0 0 .45rem;
       font-weight: 500;
     }
     .stack ul {
@@ -141,8 +141,10 @@
       padding: 0;
     }
     .stack li {
-      padding: .28rem 0;
+      padding: .2rem 0;
       border-bottom: 1px solid var(--rule);
+      font-size: .9rem;
+      line-height: 1.35;
     }
     .personal p {
       margin: 0 0 .5rem;
@@ -204,6 +206,9 @@
     }
     footer a:hover {
       color: var(--copper);
+    }
+    @media (max-width: 900px) {
+      .stack { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 720px) {
       header, .work li, .stack { grid-template-columns: 1fr; }
@@ -270,7 +275,7 @@
         <div>
           <h3>Backend</h3>
           <ul>
-            <li>.NET / C# · Azure</li>
+            <li>.NET / C#</li>
             <li>Node.js / Express</li>
             <li>Python / FastAPI</li>
           </ul>
@@ -288,8 +293,15 @@
           <ul>
             <li>Events · microservices</li>
             <li>Docker · Kubernetes · CI/CD</li>
-            <li>Vercel · Render · Neon</li>
+            <li>Azure · Vercel · Render · Neon</li>
+          </ul>
+        </div>
+        <div>
+          <h3>AI</h3>
+          <ul>
+            <li>Semantic Kernel</li>
             <li>RAG · MCP</li>
+            <li>Vector DB</li>
           </ul>
         </div>
       </div>
