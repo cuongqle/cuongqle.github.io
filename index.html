@@ -164,6 +164,11 @@
       font-size: 1.15rem;
       font-weight: 600;
     }
+    .personal .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
     .personal .project-link {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .72rem;
@@ -296,12 +301,20 @@
       <div class="project">
         <div class="project-head">
           <p class="project-title">Tenant Management</p>
-          <a
-            class="project-link"
-            href="https://tenant-management-omega.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Live demo →</a>
+          <div class="project-links">
+            <a
+              class="project-link"
+              href="https://tenant-management-omega.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Live demo →</a>
+            <a
+              class="project-link"
+              href="https://github.com/cuongqle/tenant-management"
+              target="_blank"
+              rel="noopener noreferrer"
+            >GitHub →</a>
+          </div>
         </div>
         <p class="tech">FastAPI · PyJWT · PostgreSQL · Psycopg · Pydantic · SQLAlchemy · Alembic</p>
       </div>
