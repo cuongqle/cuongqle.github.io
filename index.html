@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Le Quoc Cuong — Technical Lead</title>
-  <meta name="description" content="Le Quoc Cuong. Technical Lead and Senior Full-Stack Engineer in Ho Chi Minh City. .NET, Python, Node.js, Vue, React, Azure." />
+  <meta name="description" content="Le Quoc Cuong. Technical Lead and Senior Full-Stack Engineer in Ho Chi Minh City." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet" />
@@ -31,7 +31,7 @@
       line-height: 1.55;
     }
     .wrap {
-      max-width: 58rem;
+      max-width: 48rem;
       margin: 0 auto;
       padding: 3.5rem 1.5rem 4rem;
     }
@@ -55,7 +55,7 @@
     .kicker { margin: 0 0 .4rem; }
     h1 {
       margin: 0;
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-size: clamp(2.4rem, 6vw, 3.2rem);
       font-weight: 600;
       letter-spacing: -.03em;
       line-height: 1;
@@ -65,7 +65,7 @@
       color: var(--mute);
       font-size: 1.05rem;
     }
-    .links {
+    .nav-links {
       display: flex;
       gap: 1.25rem;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -77,12 +77,18 @@
     }
     a:hover { color: var(--copper); }
     .lede {
-      max-width: 40rem;
       margin: 2rem 0 0;
-      font-size: 1.28rem;
+      color: var(--mute);
+      max-width: 38rem;
+    }
+    .lede p {
+      margin: 0 0 1rem;
+    }
+    .lede p:last-child {
+      margin-bottom: 0;
     }
     section {
-      margin-top: 2.75rem;
+      margin-top: 2.5rem;
     }
     h2 {
       margin: 0 0 .9rem;
@@ -99,7 +105,6 @@
       grid-template-columns: 8.5rem 1fr;
       gap: .75rem 1.5rem;
       padding: .75rem 0;
-      border-bottom: 1px solid var(--rule);
     }
     .work .org {
       font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -135,26 +140,44 @@
       padding: .28rem 0;
       border-bottom: 1px solid var(--rule);
     }
-    .now {
+    .personal p {
+      margin: 0 0 1rem;
       color: var(--mute);
-      max-width: 42rem;
-      margin: 0;
+    }
+    .demo {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .demo:hover { color: var(--copper); }
+    .demo strong {
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    .demo span {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--copper);
     }
     footer {
       margin-top: 3rem;
       padding-top: 1rem;
       border-top: 1px solid var(--ink);
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: .75rem;
       color: var(--mute);
     }
     @media (max-width: 720px) {
       header, .work li, .stack { grid-template-columns: 1fr; }
-      .links { padding-top: .25rem; }
+      .nav-links { padding-top: .25rem; }
       .work .org { padding-top: 0; }
     }
   </style>
@@ -167,16 +190,25 @@
         <h1>Le Quoc Cuong</h1>
         <p class="role">Technical Lead / Senior Full-Stack Engineer</p>
       </div>
-      <nav class="links" aria-label="Profiles">
+      <nav class="nav-links" aria-label="Profiles">
         <a href="https://github.com/cuongqle">GitHub</a>
         <a href="https://www.linkedin.com/in/cuong-le-8865b689">LinkedIn</a>
       </nav>
     </header>
 
-    <p class="lede">
-      I lead architecture and delivery for production systems: distributed backends,
-      enterprise integration, and product interfaces that hold up under real load.
-    </p>
+    <div class="lede">
+      <p>
+        Technical Lead / Senior Full-Stack Engineer with fifteen-plus years building
+        and shipping production systems for global products. I lead architecture and
+        delivery end to end — from discovery and domain modeling through CI/CD and
+        containerized deploy.
+      </p>
+      <p>
+        Strongest where business process meets distributed design: event-driven
+        backends, enterprise integration, and product UIs that hold up under real load.
+        Comfortable across .NET, Python, Node.js, and modern frontends (Vue, React, Angular).
+      </p>
+    </div>
 
     <section>
       <h2>Work</h2>
@@ -187,27 +219,6 @@
             <p>B2B supplier platform for ~30,000 partners</p>
             <p class="detail">Domain-driven design, event-driven microservices on Azure</p>
             <p class="detail">SAP S/4HANA, ServiceNow, and PLM via CPI / MuleSoft</p>
-          </div>
-        </li>
-        <li>
-          <span class="org">HPE</span>
-          <div>
-            <p>Unified Functional Testing</p>
-            <p class="detail">Enterprise product engineering, system-level integrations, mentoring</p>
-          </div>
-        </li>
-        <li>
-          <span class="org">Evolution</span>
-          <div>
-            <p>SaaS ERP (finance, warehousing, sales)</p>
-            <p class="detail">SPA architecture; DDD, CQRS, event sourcing</p>
-          </div>
-        </li>
-        <li>
-          <span class="org">Personal</span>
-          <div>
-            <p>Agentic workflows and a TypeScript tenant platform</p>
-            <p class="detail">MCP / RAG; Python and .NET; Tailwind and shadcn/ui</p>
           </div>
         </li>
       </ul>
@@ -243,22 +254,21 @@
       </div>
     </section>
 
-    <section>
-      <h2>Focus</h2>
-      <p class="now">
-        Fifteen-plus years across architecture, delivery, and mentoring — from discovery
-        through containerized deploy. Strongest where business process meets distributed design.
-      </p>
+    <section class="personal">
+      <h2>Personal</h2>
+      <p>Side projects exploring multi-tenant platforms and agentic workflows.</p>
+      <a
+        class="demo"
+        href="https://tenant-management-omega.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <strong>Tenant Management</strong>
+        <span>Live demo →</span>
+      </a>
     </section>
 
-    <footer>
-      <span>cuongqle.github.io</span>
-      <span>
-        <a href="https://www.linkedin.com/in/cuong-le-8865b689">LinkedIn</a>
-        ·
-        <a href="https://github.com/cuongqle">GitHub</a>
-      </span>
-    </footer>
+    <footer>cuongqle.github.io</footer>
   </div>
 </body>
 </html>
